@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio-Materialize</title>
 
+<!-- Attach Google Font CDN -->
+      <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 <!-- Attach materioaqlize file -->
-<link rel="stylesheet" href="./assets/materializ-V_0/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="./assets/materializ-V_0/css/materialize.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
 
 <!-- Attach main.css file -->
 <link rel="stylesheet" href="./assets/CSS/main.css">
@@ -15,6 +22,92 @@
 
 </head>
 <body>
+    <!-- Start Header -->
+    <header class="main-header teal">
+        <div class="primary-overlay">
+            <div class="navbar-fixed">
+                <nav class="transparent">
+                    <div class="container">
+                        <div class="nav-wrapper">
+                            <a href="#!" class="brand-logo">logo</a>
+                            <a href="#!" data-activates="mobile-nav" class="button-collapse">
+                                <i class="materiaL-icons">menu</i>
+                            </a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="#home" class="">صفحه اصلی</a></li>
+                                <li><a href="#portfolio" class=""> نمونه کار</a></li>
+                                <li><a href="#gallery" class=""> گالری</a></li>
+                                <li><a href="#about" class=""> درباره من</a></li>
+                                <li><a href="#contact" class=""> تماس بامن</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+                   <!--Start Side Navbar -->
+
+                   <ul class="side-nav" id="mobile-nav">
+                    <h3 class="blue-grey dareken-3">Samira-Omidvar</h3>
+                    <li><a href="#!" class="divider"></a></li>
+                    <li><a href="#home" class="">صفحه اصلی</a></li>
+                    <li><a href="#portfolio" class=""> نمونه کار</a></li>
+                    <li><a href="#gallery" class=""> گالری</a></li>
+                    <li><a href="#about" class=""> درباره من</a></li>
+                    <li><a href="#contact" class=""> تماس بامن</a></li>
+                   </ul>
+                   <!-- END Side Navbar -->
+
+                   <!-- Show Case -->
+                   <div class="showCase container">
+                    <div class="row">
+                        <div class="col s12 m6 l6 custom-txt">
+                            <h2>I am Samira Omidvar</h2>
+                            <h6>FrontEnd Developer</h6>
+                            <p class="flow-text">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                            <br>
+                            <a href="#about" class="btn btn-large white black-text">Download CV </a>
+                            <a href="#contact" class="white-text">
+                                <i class="material-icons medium scroll-icon">arrow_drop_down_circle</i>
+                            </a>
+                        </div>
+                        <div class="col s12 m6 l6 custom-txt">
+                          <img src="./assets/IMG/person/01.png" class="responsive-img portfolio" alt="portfolio-img">
+                        </div>
+                    </div>
+                   </div>
+
+        </div>
+    </header>
+
+    <!-- END Header -->
+
+    <!-- Start Boxes -->
+    <section class="section-boxes center">
+        <div class="row">
+            <div class="col s12 m6 l3 amber darken-4 white-text item-box">
+                <i class="material-icons medium ">show_cart</i>
+                <h4>my projects</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="col s12 m6 l3 purple white-text item-box">
+                <i class="material-icons medium ">show_cart</i>
+                <h4>my projects</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="col s12 m6 l3 teal white-text item-box">
+                <i class="material-icons medium  ">show_cart</i>
+                <h4>my projects</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="col s12 m6 l3 red white-text item-box">
+                <i class="material-icons medium ">show_cart</i>
+                <h4>my projects</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+            </div>
+        </div>
+    </section>
     
 
 
@@ -35,8 +128,48 @@
 
 
 
+<!-- <script src="./assets/JS/jquery-3.6.4.slim.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+ integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
+crossorigin="anonymous"></script>
+
+<!-- <script src="./assets/materializ-V_0/js/materialize.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 
-<script src="./assets/materializ-V_0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.botton-collapse').sideNav();
+
+
+        // scroll
+        const options=[
+            {
+                selector:'.custom-txt',offset:0 ,callback:function(element){
+                    Materialize.fadeInImage($(element))
+
+                },
+            },
+
+          {
+            selector:'.portfolio',offset:0 ,callback:function(element){
+                    Materialize.fadeInImage($(element))
+
+                },
+          },
+          {
+            selector:'.navbar-fixed',offset:1500 ,callback:function(){
+                   $('nav').removeClass('transparent');
+                   $('nav').addClass('blue-grey darken-3')
+
+                },
+          }
+        ];
+        Materialize.scrollFire(options);
+
+    
+    });
+</script>
+
 </body>
 </html>
